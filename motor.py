@@ -91,17 +91,24 @@ def reverse(x):
 
 #Stops the motor.
 def stopMotor():
-    GPIO.output(Backward, GPIO.LOW)        
-    GPIO.output(Forward, GPIO.LOW)
+    try:
+        GPIO.output(Backward, GPIO.LOW)        
+        GPIO.output(Forward, GPIO.LOW)
+    except:
+        pwm.stop()
+        GPIO.cleanup()
     
     if(debugging):
         print("Stopped the motor")
-
 #sets the speed
 def setSpeed(x):
-    pwm.ChangeDutyCycle(x)
-    currentSpeed = x;
-
+    try:
+        pwm.ChangeDutyCycle(x)
+        currentSpeed = x;
+    except:
+        pwm.stop()
+        GPIO.cleanup()
+        
 #returns the speed.
 def getSpeed():
     return currentSpeed;
