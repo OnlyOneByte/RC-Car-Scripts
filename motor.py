@@ -26,7 +26,7 @@ import RPi.GPIO as GPIO
 Forward=26
 Backward=20
 speed=21
-sleeptime=0.01 # this is the time between motor changes.
+sleeptime=0.1 # this is the time between motor changes.
 
 debugging = True #will print debugging messages if set to true
 currentSpeed = 50 #speed = %. 100 is max, 0 is nonee
