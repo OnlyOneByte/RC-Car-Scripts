@@ -2,6 +2,7 @@
 # This code is in python to use the raspberry pi
 # GPIO pins to run a motor off of a L298D board
 # also includes speed control
+# I have no idea what motor its driving but its not that big
 
 # USES PINS 37, 38, 39, and 40
 # AKA GPIO26, GPIO20, GND(39), and GPIO21
