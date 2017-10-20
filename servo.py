@@ -51,6 +51,6 @@ def turn(dir, percent):
     
     raise ValueError('Expecting dir to be -1, 0, or 1, not ', dir)
     
-def stopServo():
+def cleanServo():
     pi.stop()
     

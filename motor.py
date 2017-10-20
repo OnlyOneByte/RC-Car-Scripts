@@ -112,3 +112,7 @@ def setSpeed(x):
 #returns the speed.
 def getSpeed():
     return currentSpeed;
+
+def cleanMotor():
+    pwm.stop()
+    GPIO.cleanup()
