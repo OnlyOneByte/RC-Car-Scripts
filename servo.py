@@ -15,9 +15,10 @@ import pigpio
 
 SERVO = 18
 
-right=1700
+#These are the PWM values for each of these things
 mid=1400
-left=1100
+
+#How long the PWM signal has to be kept up for until it is done
 
 delta=300
 
@@ -43,10 +44,10 @@ def turn(dir, percent):
     if(percent > 100) or (percent < 1):
         raise ValueError("Expecting % Value between 1 and 100, not ", percent)
     if(dir == 1): #right
-        setPulsewidth(mid + delta * (percent/100.0))
+        setPulsewidth(mid - delta * (percent/100.0))
         return
     if(dir == -1): #left
-        setPulsewidth(mid - delta * (percent/100.0))
+        setPulsewidth(mid + delta * (percent/100.0))
         return
     
     raise ValueError('Expecting dir to be -1, 0, or 1, not ', dir)

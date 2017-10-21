@@ -24,10 +24,10 @@ def on_press(key):
         reverse(100)
         
     if key.char == 'a':
-        turn(1, 100)
+        turn(-1, 100)
         
     if key.char == 'd':
-        turn(-1, 100)
+        turn(1, 100)
 
     if key.char == 'p':
         cleanMotor()
